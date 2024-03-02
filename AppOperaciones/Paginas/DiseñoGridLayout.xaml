@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppOperaciones.Paginas.DiseñoGridLayout"
+             Title="DiseñoGridLayout">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to .NET MAUI!"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Grid x:Name="LayoutRoot" Background="{StaticResource AppBackground}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="2" Margin="10">
+                <Label Text="Rango" FontSize="Title" />
+                <StackLayout Orientation="Horizontal">
+                    <Entry x:Name="txtInicio" Text="2" Keyboard="Numeric" />
+                    <Label Text="-" />
+                    <Entry x:Name="txtFin" Text="15" Keyboard="Numeric" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <RadioButton x:Name="rbPar" IsChecked="True" Content="Par" />
+                    <RadioButton x:Name="rbImpar" Content="Impar" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="10">
+                <Label Text="Seleccionar" FontSize="Title" />
+                <Picker x:Name="pickerNumeros" ItemsSource="{Binding Numeros}" SelectedIndex="0" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="0" Margin="10">
+                <Label Text="Operaciones" FontSize="Title" />
+            </StackLayout>
+
+            <StackLayout Grid.Row="2" Grid.Column="1" Margin="10">
+                <Label Text="Resultado" FontSize="Title" />
+                <Label x:Name="lblResultado" Text="15" FontSize="Large" />
+                <Label Text="La suma de 9+15-24" />
+                <Label Text="La multiplicación de 9 x 15 =135" />
+            </StackLayout>
+        </Grid>
+
+
+    </VerticalStackLayout>
+    
+</ContentPage>
