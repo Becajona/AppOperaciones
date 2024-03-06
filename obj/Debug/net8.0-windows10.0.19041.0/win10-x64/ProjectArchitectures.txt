@@ -1,0 +1,1 @@
+C:\App. Operaciones C# Jonathan\AppOperaciones\AppOperaciones\AppOperaciones.csproj;x64
